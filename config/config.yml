@@ -1,0 +1,22 @@
+contao:
+  legacy_routing: false
+
+  localconfig:
+    folderUrl: true
+    sessionTimeout: 86400 # 24 hours
+    adminEmail: '%env(ADMIN_EMAIL)%'
+
+  mailer:
+    transports:
+      default: ~
+
+webpack_encore:
+  output_path: '%kernel.project_dir%/public/build'
+
+framework:
+  assets:
+    json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
+
+  mailer:
+    transports:
+      default: '%env(MAILER_DSN)%'

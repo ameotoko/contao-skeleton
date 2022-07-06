@@ -1,0 +1,17 @@
+{
+  "name": "contao-skeleton",
+  "description": "Frontend assets for Contao Skeleton project template",
+  "author": "Andrey Vinichenko",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "encore production --progress",
+    "serve": "encore dev-server"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^2.1.0",
+    "foundation-sites": "^6.7.4",
+    "sass-embedded": "^1.53.0",
+    "sass-loader": "^12.6.0"
+  }
+}

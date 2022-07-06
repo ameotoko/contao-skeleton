@@ -1,0 +1,22 @@
+# Configuration
+/config/parameters.yml
+/.php-version
+/.env.local
+
+# Composer
+/.htaccess
+/vendor/
+
+# Generated folders
+/assets/
+/files/
+/public/
+/system/*
+!/system/config/
+/system/config/localconfig.php
+/system/config/tcpdf.php
+/var/
+/web/
+
+# Skip files
+/system/modules/*/.skip
