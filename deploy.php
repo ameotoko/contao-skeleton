@@ -50,14 +50,14 @@ task('database:retrieve', static function () {
 
     $filename = sprintf('backup__%s.sql.gz', $now->format('YmdHis'));
 
-    run("cd {{release_path}} && {{bin/php}} {{bin/console}} contao:backup:create $filename");
+    run("cd {{release_or_current_path}} && {{bin/php}} {{bin/console}} contao:backup:create $filename");
 
     echo ".finished\n";
 
     runLocally('mkdir -p var/backups');
 
     echo 'Downloading backup archive..';
-    download("{{release_path}}/var/backups/$filename", 'var/backups/');
+    download("{{release_or_current_path}}/var/backups/$filename", 'var/backups/');
 
     echo ".finished\n";
     echo 'Restoring local database....';
@@ -95,11 +95,11 @@ task('database:release', static function () {
 
     echo ".finished\n";
     echo 'Uploading backup archive...';
-    upload("var/backups/$filename", '{{release_path}}/var/backups/');
+    upload("var/backups/$filename", '{{release_or_current_path}}/var/backups/');
 
     echo ".finished\n";
     echo 'Restoring remote database..';
-    run("cd {{release_path}} && {{bin/php}} {{bin/console}} contao:backup:restore $filename");
+    run("cd {{release_or_current_path}} && {{bin/php}} {{bin/console}} contao:backup:restore $filename");
     echo ".finished\n";
 
     echo "  Restore of remote database completed\n";
