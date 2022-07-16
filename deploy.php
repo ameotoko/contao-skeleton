@@ -12,6 +12,10 @@ host('example')
     ->set('bin/composer', '/usr/bin/php /usr/bin/composer')
 ;
 
+// Remove unneeded entries added by Contao recipe
+set('shared_dirs', array_diff(get('shared_dirs'), ['contao-manager']));
+set('shared_files', array_diff(get('shared_files'), ['config/parameters.yml']));
+
 // Uncomment, if this step is not needed in your host environment
 // task('deploy:writable', function () {});
 
