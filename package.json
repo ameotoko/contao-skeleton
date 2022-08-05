@@ -6,7 +6,7 @@
     "private": true,
     "scripts": {
         "build": "encore production --progress",
-        "serve": "encore dev-server"
+        "serve": "encore dev-server --public 127.0.0.1:8080"
     },
     "devDependencies": {
         "@symfony/webpack-encore": "^3.0.0",
