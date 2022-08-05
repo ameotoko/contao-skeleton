@@ -38,6 +38,6 @@
     ]
   },
   "require-dev": {
-    "deployer/deployer": "v7.0.0-rc.8"
+    "deployer/deployer": "^7.0"
   }
 }
