@@ -52,12 +52,17 @@ Encore
   // when dev-server is running, only serve css/js files from memory, other files are written to disk
   // Contao's image processing checks source using fs, not http
   .configureDevServerOptions(function (options) {
-    options.devMiddleware = {
-      writeToDisk: path => !(/\.(css|js)$/.test(path))
-    };
-    options.https = {
-      pfx: path.join(process.env.HOME, '.symfony/certs/default.p12')
-    }
+      return Object.assign(options, {
+          devMiddleware: {
+              writeToDisk: path => !(/\.(css|js)$/.test(path))
+          },
+          server: {
+              type: 'https',
+              options: {
+                  pfx: fs.readFileSync(path.join(process.env.HOME, '.symfony/certs/default.p12'))
+              }
+          },
+      });
   })
 
   // .configureBabel((config) => {
