@@ -13,7 +13,8 @@
         "contao/listing-bundle": "^4.13",
         "contao/manager-bundle": "4.13.*",
         "contao/news-bundle": "^4.13",
-        "contao/newsletter-bundle": "^4.13"
+        "contao/newsletter-bundle": "^4.13",
+        "sentry/sentry-symfony": "^4.3"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
