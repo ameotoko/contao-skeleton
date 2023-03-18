@@ -41,7 +41,6 @@ Encore
    * https://symfony.com/doc/current/frontend.html#adding-more-features
    */
   .cleanupOutputBeforeBuild()
-  .enableBuildNotifications()
   .enableSourceMaps(!Encore.isProduction())
 
   // enable this when jQuery is provided by Contao's layout ("include jQuery" checkbox)
