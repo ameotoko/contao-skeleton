@@ -17,6 +17,8 @@
 /system/config/tcpdf.php
 /var/
 /web/
+/.phpunit.cache/
 
 # Skip files
 /system/modules/*/.skip
+/bin/console
