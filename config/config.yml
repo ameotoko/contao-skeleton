@@ -5,6 +5,7 @@ contao:
         folderUrl: true
         sessionTimeout: 86400 # 24 hours
         adminEmail: '%env(ADMIN_EMAIL)%'
+        licenseAccepted: true
 
     mailer:
         transports:
