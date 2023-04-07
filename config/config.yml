@@ -6,6 +6,7 @@ contao:
         sessionTimeout: 86400 # 24 hours
         adminEmail: '%env(ADMIN_EMAIL)%'
         licenseAccepted: true
+        # more examples at https://github.com/contao-association/website/blob/main/config/config.yml
 
     mailer:
         transports:
