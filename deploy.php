@@ -47,6 +47,10 @@ set('rsync_dest', get('{{release_path'));
 
 // Restore local database with remote one
 task('database:retrieve', static function () {
+    if (!askConfirmation('Local database will be overridden. OK?')) {
+        throw error('Task aborted');
+    }
+
     echo 'Preparing backup on remote..';
 
     $now = new \DateTime('now');
@@ -78,16 +82,12 @@ task('database:retrieve', static function () {
     echo "  Restore of local database completed\n";
 })->desc('Downloads a database dump from given host and overrides the local database.');
 
-task('ask_retrieve', static function () {
-    if (!askConfirmation('Local database will be overriden. OK?')) {
-        die("Restore cancelled.\n");
-    }
-});
-
-before('database:retrieve', 'ask_retrieve');
-
 // Restore remote database with local one
 task('database:release', static function () {
+    if (!askConfirmation('Remote (!) database will be overridden. OK?')) {
+        throw error('Task aborted');
+    }
+
     echo 'Preparing local backup.....';
 
     $now = new \DateTime('now');
@@ -109,11 +109,4 @@ task('database:release', static function () {
     echo "  Restore of remote database completed\n";
 })->desc('Restores the local database on the given host.');
 
-task('ask_release', static function () {
-    if (!askConfirmation('Remote (!) database will be overriden. OK?')) {
-        die("Restore cancelled.\n");
-    }
-});
-
-before('database:release', 'ask_release');
 after('database:release', 'contao:migrate');
