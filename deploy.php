@@ -58,7 +58,7 @@ task('database:retrieve', static function () {
 
     $filename = sprintf('backup__%s.sql.gz', $now->format('YmdHis'));
 
-    run("cd {{release_or_current_path}} && {{bin/console}} contao:backup:create $filename");
+    run("cd {{release_or_current_path}} && {{bin/console}} contao:backup:create --ignore-tables=tl_log,tl_undo $filename");
 
     echo ".finished\n";
 
