@@ -2,6 +2,8 @@
 
 namespace Deployer;
 
+use Symfony\Component\Console\Input\InputOption;
+
 import('recipe/contao.php');
 
 host('example')
@@ -46,6 +48,7 @@ set('rsync_src', __DIR__);
 set('rsync_dest', get('{{release_path'));
 
 // Restore local database with remote one
+option('no-migrate', null, InputOption::VALUE_NONE, 'Skip contao:migrate step');
 task('database:retrieve', static function () {
     if (!askConfirmation('Local database will be overridden. OK?')) {
         throw error('Task aborted');
@@ -73,6 +76,10 @@ task('database:retrieve', static function () {
     echo ".finished\n";
     echo 'Run migration scripts.......';
     try {
+        if (input()->getOption('no-migrate')) {
+            throw new \Exception();
+        }
+
         runLocally('symfony php vendor/bin/contao-console contao:migrate --no-interaction');
         echo ".finished\n";
     } catch (\Exception $e) {
