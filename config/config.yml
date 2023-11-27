@@ -10,6 +10,12 @@ contao:
         transports:
             default: ~
 
+    search:
+        default_indexer:
+            enable: false
+        listener:
+            index: false
+
 webpack_encore:
     output_path: '%kernel.project_dir%/public/build'
 
