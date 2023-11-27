@@ -5,7 +5,6 @@
     "type": "project",
     "require": {
         "php": "^8.1",
-        "ameotoko/contao-encore-bridge": "^1.0",
         "contao/calendar-bundle": "^5.2",
         "contao/comments-bundle": "^5.2",
         "contao/conflicts": "@dev",
@@ -14,7 +13,8 @@
         "contao/manager-bundle": "5.2.*",
         "contao/news-bundle": "^5.2",
         "contao/newsletter-bundle": "^5.2",
-        "sentry/sentry-symfony": "^4.3"
+        "sentry/sentry-symfony": "^4.3",
+        "symfony/webpack-encore-bundle": "^1.17"
     },
     "conflict": {
         "contao-components/installer": "<1.3"

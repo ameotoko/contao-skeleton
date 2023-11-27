@@ -42,6 +42,7 @@ Encore
    */
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
+  .enableVersioning(Encore.isProduction())
 
   // enable this when jQuery is provided by Contao's layout ("include jQuery" checkbox)
   // .addExternals({
