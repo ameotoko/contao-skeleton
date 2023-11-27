@@ -9,10 +9,10 @@
         "serve": "encore dev-server --public 127.0.0.1:8080"
     },
     "devDependencies": {
-        "@symfony/webpack-encore": "^3.0.0",
-        "foundation-sites": "^6.7.5",
+        "@symfony/webpack-encore": "^4.5.0",
+        "foundation-sites": "^6.8.1",
         "jquery": "^3.6.0",
-        "sass-embedded": "^1.53.0",
-        "sass-loader": "^13.0.2"
+        "sass-embedded": "^1.69.5",
+        "sass-loader": "^13.3.2"
     }
 }
