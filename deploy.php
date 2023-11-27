@@ -37,7 +37,10 @@ task('deploy:update_code', function () {
         'composer.json',
         'composer.lock',
     ] as $src) {
-        upload($src, '{{release_path}}/', ['options' => ['--recursive', '--relative']]);
+        upload($src, '{{release_path}}/', [
+            'options' => ['--recursive', '--relative'],
+            'progress_bar' => false
+        ]);
     }
 });
 
