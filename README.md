@@ -1,6 +1,6 @@
 # Contao 4 Managed Edition Skeleton
 
-This is a template for projects based on [Contao 4 Managed Edition](https://github.com/contao/managed-edition),
+This is a template for projects based on [Contao 5 Managed Edition](https://github.com/contao/managed-edition),
 that simply has some additional tools preconfigured.
 
 ## What's added?

@@ -1,19 +1,19 @@
 {
     "name": "ameotoko/contao-skeleton",
-    "description": "Customized template for Contao 4.13 project",
+    "description": "Customized template for Contao 5 projects",
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "php": "^7.4 || ^8.1",
+        "php": "^8.1",
         "ameotoko/contao-encore-bridge": "^1.0",
-        "contao/calendar-bundle": "^4.13",
-        "contao/comments-bundle": "^4.13",
+        "contao/calendar-bundle": "^5.2",
+        "contao/comments-bundle": "^5.2",
         "contao/conflicts": "@dev",
-        "contao/faq-bundle": "^4.13",
-        "contao/listing-bundle": "^4.13",
-        "contao/manager-bundle": "4.13.*",
-        "contao/news-bundle": "^4.13",
-        "contao/newsletter-bundle": "^4.13",
+        "contao/faq-bundle": "^5.2",
+        "contao/listing-bundle": "^5.2",
+        "contao/manager-bundle": "5.2.*",
+        "contao/news-bundle": "^5.2",
+        "contao/newsletter-bundle": "^5.2",
         "sentry/sentry-symfony": "^4.3"
     },
     "conflict": {
@@ -24,7 +24,8 @@
             "composer/package-versions-deprecated": true,
             "contao-community-alliance/composer-plugin": true,
             "contao-components/installer": true,
-            "contao/manager-plugin": true
+            "contao/manager-plugin": true,
+            "php-http/discovery": false
         }
     },
     "extra": {
@@ -39,6 +40,6 @@
         ]
     },
     "require-dev": {
-        "deployer/deployer": "^7.0"
+        "deployer/deployer": "^7.3"
     }
 }

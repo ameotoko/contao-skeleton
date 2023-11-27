@@ -1,6 +1,4 @@
 contao:
-    legacy_routing: false
-
     localconfig:
         folderUrl: true
         sessionTimeout: 86400 # 24 hours
