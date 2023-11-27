@@ -12,7 +12,7 @@ Encore
   .setOutputPath('public/build/')
   // public path used by the web server to access the output path
   .setPublicPath('/build')
-  // only needed for CDN's or sub-directory deploy
+  // only needed for CDN's or subdirectory deploy
   //.setManifestKeyPrefix('build/')
 
   /*
@@ -51,17 +51,17 @@ Encore
   // when dev-server is running, only serve css/js files from memory, other files are written to disk
   // Contao's image processing checks source using fs, not http
   .configureDevServerOptions(function (options) {
-      return Object.assign(options, {
-          devMiddleware: {
-              writeToDisk: path => !(/\.(css|js)$/.test(path))
-          },
-          server: {
-              type: 'https',
-              options: {
-                  pfx: fs.readFileSync(path.join(process.env.HOME, '.symfony/certs/default.p12'))
-              }
-          },
-      });
+    return Object.assign(options, {
+      devMiddleware: {
+        writeToDisk: path => !(/\.(css|js)$/.test(path))
+      },
+      server: {
+        type: 'https',
+        options: {
+          pfx: fs.readFileSync(path.join(process.env.HOME, '.symfony/certs/default.p12'))
+        }
+      },
+    });
   })
 
   // .configureBabel((config) => {
